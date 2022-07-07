@@ -1,0 +1,39 @@
+const api = {
+  getContinentsData: async () => {
+    const response = await fetch("https://disease.sh/v3/covid-19/continents");
+    return await response.json();
+  },
+
+  getCountriesData: async () => {
+    const response = await fetch("https://disease.sh/v3/covid-19/countries");
+    return await response.json();
+  },
+
+  getVaccineCountriesData: async () => {
+    const response = await fetch(
+      "https://disease.sh/v3/covid-19/vaccine/countries"
+    );
+    return await response.json();
+  },
+
+  getHistoricalData: async () => {
+    const response = await fetch(
+      "https://disease.sh/v3/covid-19/historical/all?lastdays=all"
+    );
+    return await response.json();
+  },
+
+  getCoverageData: async () => {
+    const response = await fetch(
+      "https://disease.sh/v3/covid-19/vaccine/coverage?lastdays=all&fullData=true"
+    );
+    return await response.json();
+  },
+
+  getAllData: async () => {
+    const response = await fetch("https://disease.sh/v3/covid-19/all");
+    return await response.json();
+  },
+};
+
+export default api;
