@@ -50,10 +50,12 @@ const fetch = (`https://disease.sh/v3`);
     };
     fetchData(coverageData);
 
-    export default fetchData()
-        return  
-        // want to stop reloading once data is secure, or present loaded data wile retrying request
-        <div>
-            <continentsData />
+    export default fetchData;
 
-        </div>;
+    export const fetchData = async () => {
+        const response = await fetch(
+            "https://disease.sh/v3/covid-19/all"
+        );
+        const data = await response.json();
+        return data;
+    }
