@@ -37,35 +37,38 @@ export const options = {
   scales: {
     xAxis: [{
       type: 'time',
+      time: {
+        unit: 'day',
+      }
     }],
-    // yAxis: [{
-    //   type: [moment("20200320", "YYYYMMDD").fromNow()],
-    // }]
+    yAxis: [{
+      type: [moment("20200320", "YYYYMMDD").fromNow()],
+    }]
   }
 };
 
-// const labels = ['March 20', 'April 20', 'May 20', 'June 20', 
-// 'July 20', 'August 20', 'September 20', 'October 20', 'November 20', 'December 20', 'January 21'];
-const labels = [moment("20200320", "YYYYMMDD").fromNow()];
+const labels = ['March 20', 'April 20', 'May 20', 'June 20', 
+'July 20', 'August 20', 'September 20', 'October 20', 'November 20', 'December 20', 'January 21'];
+// const labels = [moment("20200320", "YYYYMMDD").fromNow()];
 
-export const historicalData = {
+export const myData = {
   labels,
   datasets: [
     {
       label: 'Cases',
-      data: labels.map(() => [historicalData.cases]),
+      data: labels.map(() => 1),
       borderColor: 'rgb(0, 0, 255)',
       backgroundColor: 'rgba(0, 0, 255, 0.5)',
     },
     {
       label: 'Deaths',
-      data: labels.map(() => [historicalData.deaths]),
+      data: labels.map(() => 2),
       borderColor: 'rgb(255, 0, 0)',
       backgroundColor: 'rgba(255, 0, 0, 0.5)',
     },
     {
       label: 'Recovered',
-      data: labels.map(() => [historicalData.recovered]),
+      data: labels.map(() => 3),
       borderColor: 'rgb(0, 255, 0)',
       backgroundColor: 'rgba(107,142,35, 0.5)',
     },
@@ -73,7 +76,7 @@ export const historicalData = {
 };
 
 export default function ApiLineExample() {
-  const [historicalData, setHistoricalData] = useState([]);
+  const [data, setData] = useState([]);
 
   const transformDatetimeFormat = (input_date) => {
     return moment(input_date, "M-D-YY").format("YYYY-MM-DD")
@@ -99,7 +102,7 @@ export default function ApiLineExample() {
       const cases = transformDictIntoXYList(data["cases"])
       const deaths = transformDictIntoXYList(data["deaths"])
       const recovered = transformDictIntoXYList(data["recovered"])
-      setHistoricalData({
+      setData({
         "cases": cases, "deaths": deaths, "recovered": recovered
       })
     });
@@ -111,7 +114,7 @@ export default function ApiLineExample() {
       <h1>Te Waka</h1>
       <Line
         options={options}
-        data={historicalData}
+        data={myData}
         // setData={setData}
         
       />
