@@ -34,35 +34,38 @@ export const options = {
       text: 'Deaths vs Recovered in Confirmed Cases - Disease.sh',
     }
   },
-  // scales: {
-  //   xAxes: [{
-  //    type: 'time',
-  //   }]
-  // }
+  scales: {
+    xAxis: [{
+      type: 'time',
+    }],
+    // yAxis: [{
+    //   type: [moment("20200320", "YYYYMMDD").fromNow()],
+    // }]
+  }
 };
 
-const labels = ['January 2020', 'February 20', 'March 20', 'April 20', 'May 20', 'June 20', 
-'July 20', 'August 20', 'September 20', 'October 20', 'November 20', 'December 20'];
+// const labels = ['March 20', 'April 20', 'May 20', 'June 20', 
+// 'July 20', 'August 20', 'September 20', 'October 20', 'November 20', 'December 20', 'January 21'];
+const labels = [moment("20200320", "YYYYMMDD").fromNow()];
 
-
-export const myData = {
+export const historicalData = {
   labels,
   datasets: [
     {
       label: 'Cases',
-      data: labels.map(() => 1),
+      data: labels.map(() => [historicalData.cases]),
       borderColor: 'rgb(0, 0, 255)',
       backgroundColor: 'rgba(0, 0, 255, 0.5)',
     },
     {
       label: 'Deaths',
-      data: labels.map(() => 2),
+      data: labels.map(() => [historicalData.deaths]),
       borderColor: 'rgb(255, 0, 0)',
       backgroundColor: 'rgba(255, 0, 0, 0.5)',
     },
     {
       label: 'Recovered',
-      data: labels.map(() => 3),
+      data: labels.map(() => [historicalData.recovered]),
       borderColor: 'rgb(0, 255, 0)',
       backgroundColor: 'rgba(107,142,35, 0.5)',
     },
@@ -70,7 +73,7 @@ export const myData = {
 };
 
 export default function ApiLineExample() {
-  const [Data, setData] = useState([]);
+  const [historicalData, setHistoricalData] = useState([]);
 
   const transformDatetimeFormat = (input_date) => {
     return moment(input_date, "M-D-YY").format("YYYY-MM-DD")
@@ -96,18 +99,20 @@ export default function ApiLineExample() {
       const cases = transformDictIntoXYList(data["cases"])
       const deaths = transformDictIntoXYList(data["deaths"])
       const recovered = transformDictIntoXYList(data["recovered"])
-      setData({
+      setHistoricalData({
         "cases": cases, "deaths": deaths, "recovered": recovered
       })
     });
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="App">
-      <h1>Historical data</h1>
+      <h1>Te Waka</h1>
       <Line
         options={options}
-        data={myData}
+        data={historicalData}
+        // setData={setData}
         
       />
     </div>
