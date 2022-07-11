@@ -45,20 +45,20 @@ const labels = ['January 2020', 'February 20', 'March 20', 'April 20', 'May 20',
 'July 20', 'August 20', 'September 20', 'October 20', 'November 20', 'December 20'];
 
 
-export const my_data = {
+export const myData = {
   labels,
   datasets: [
     {
       label: 'Cases',
       data: labels.map(() => 1),
       borderColor: 'rgb(0, 0, 255)',
-      backgroundColor: 'rgba(255, 0, 0, 0.5)',
+      backgroundColor: 'rgba(0, 0, 255, 0.5)',
     },
     {
       label: 'Deaths',
       data: labels.map(() => 2),
       borderColor: 'rgb(255, 0, 0)',
-      backgroundColor: 'rgba(0, 0, 255, 0.5)',
+      backgroundColor: 'rgba(255, 0, 0, 0.5)',
     },
     {
       label: 'Recovered',
@@ -70,7 +70,7 @@ export const my_data = {
 };
 
 export default function ApiLineExample() {
-  const [data, setData] = useState([]);
+  const [Data, setData] = useState([]);
 
   const transformDatetimeFormat = (input_date) => {
     return moment(input_date, "M-D-YY").format("YYYY-MM-DD")
@@ -91,14 +91,14 @@ export default function ApiLineExample() {
   }
 
   useEffect(() => {
-    api.getHistoricalData().then((response) => {
+      api.getHistoricalData().then((response) => {
       const data = response;
       const cases = transformDictIntoXYList(data["cases"])
       const deaths = transformDictIntoXYList(data["deaths"])
       const recovered = transformDictIntoXYList(data["recovered"])
       setData({
         "cases": cases, "deaths": deaths, "recovered": recovered
-      });
+      })
     });
   }, []);
 
@@ -107,7 +107,8 @@ export default function ApiLineExample() {
       <h1>Historical data</h1>
       <Line
         options={options}
-        data={my_data}
+        data={myData}
+        
       />
     </div>
   );
