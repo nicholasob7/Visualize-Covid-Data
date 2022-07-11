@@ -31,7 +31,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart'
+      text: 'Deaths vs Recovered in Confirmed Cases - Disease.sh',
     }
   },
   // scales: {
@@ -41,20 +41,21 @@ export const options = {
   // }
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['January 2020', 'February 20', 'March 20', 'April 20', 'May 20', 'June 20', 
+'July 20', 'August 20', 'September 20', 'October 20', 'November 20', 'December 20'];
 
 
 export const my_data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
+      label: 'Deaths',
       data: labels.map(() => 1),
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
-      label: 'Dataset 2',
+      label: 'Recovered',
       data: labels.map(() => 2),
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
