@@ -49,16 +49,22 @@ export const my_data = {
   labels,
   datasets: [
     {
-      label: 'Deaths',
+      label: 'Cases',
       data: labels.map(() => 1),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      borderColor: 'rgb(0, 0, 255)',
+      backgroundColor: 'rgba(255, 0, 0, 0.5)',
+    },
+    {
+      label: 'Deaths',
+      data: labels.map(() => 2),
+      borderColor: 'rgb(255, 0, 0)',
+      backgroundColor: 'rgba(0, 0, 255, 0.5)',
     },
     {
       label: 'Recovered',
-      data: labels.map(() => 2),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      data: labels.map(() => 3),
+      borderColor: 'rgb(0, 255, 0)',
+      backgroundColor: 'rgba(107,142,35, 0.5)',
     },
   ],
 };
@@ -88,9 +94,10 @@ export default function ApiLineExample() {
     api.getHistoricalData().then((response) => {
       const data = response;
       const cases = transformDictIntoXYList(data["cases"])
+      const deaths = transformDictIntoXYList(data["deaths"])
       const recovered = transformDictIntoXYList(data["recovered"])
       setData({
-        "cases": cases, "recovered": recovered
+        "cases": cases, "deaths": deaths, "recovered": recovered
       });
     });
   }, []);
