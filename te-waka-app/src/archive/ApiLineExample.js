@@ -43,15 +43,6 @@ export const options = {
         },
       },
     ],
-    // yAxis: [
-    //   {
-    //     beginAtZero: true,
-    //     grace: '1.3%',
-    //     // ticks: {
-    //     //   stepSize: 1,
-    //     // }
-    //   },
-    // ],
   },
 };
 

@@ -31,17 +31,17 @@ export const options = {
         },
         title: {
         display: true,
-        text: "Deaths vs Recovered in Confirmed Cases - Disease.sh",
+        text: "Vaccinations per Confirmed Cases - Disease.sh",
         },
     },
     scales: {
         xAxis: [
-        {
-            type: "time",
-            time: {
-            unit: "day",
+            {
+                type: "time",
+                time: {
+                    unit: "day",
+                },
             },
-        },
         ],
     },
 };
@@ -49,32 +49,38 @@ export const options = {
 const labels = []
 
 
-export const myData = {
+export const vaccineData = {
     labels,
     datasets: [
         {
-        label: "Cases",
-        data: labels.map(() => 1),
+        label: "total",
+        data: labels.map(() => []),
         borderColor: "rgb(0, 0, 255)",
         backgroundColor: "rgba(0, 0, 255, 0.5)",
         },
         {
-        label: "Deaths",
-        data: labels.map(() => 2),
+        label: "daily",
+        data: labels.map(() => []),
         borderColor: "rgb(255, 0, 0)",
         backgroundColor: "rgba(255, 0, 0, 0.5)",
         },
         {
-        label: "Recovered",
-        data: labels.map(() => 3),
+        label: "totalPerHundred",
+        data: labels.map(() => []),
+        borderColor: "rgb(0, 255, 0)",
+        backgroundColor: "rgba(107,142,35, 0.5)",
+        },
+        {
+        label: "totalPerMillion",
+        data: labels.map(() => []),
         borderColor: "rgb(0, 255, 0)",
         backgroundColor: "rgba(107,142,35, 0.5)",
         },
     ],
 };
 
-export default function ApiLineExample() {
-    const [data, setData] = useState(myData);
+export default function PlotExample() {
+    const [data, setData] = useState(vaccineData);
 
     const transformDatetimeFormat = (input_date) => {
         return moment(input_date, "M-D-YY").format("YYYY-MM-DD");
@@ -104,36 +110,44 @@ export default function ApiLineExample() {
     };
 
     useEffect(() => {
-        api.getHistoricalData().then((response) => {
+        api.getCoverageData().then((response) => {
         const data = response;
-        const cases = transformDictIntoXYList(data["cases"]);
-        const deaths = transformDictIntoXYList(data["deaths"]);
-        const recovered = transformDictIntoXYList(data["recovered"]);
-        const labels = getPositionList(cases, "x");
+        const total = transformDictIntoXYList(data["total"]);
+        const daily = transformDictIntoXYList(data["daily"]);
+        const totalPerHundred = transformDictIntoXYList(data["totalPerHundred"]);
+        const totalPerMillion = transformDictIntoXYList(data["totalPerMillion"]);
+        const labels = getPositionList(total, "x");
         const input_data = {
             labels: labels,
-            cases: getPositionList(cases, "y"),
-            deaths: getPositionList(deaths, "y"),
-            recovered: getPositionList(recovered, "y"),
+            total: getPositionList(total, "y"),
+            daily: getPositionList(daily, "y"),
+            totalPerHundred: getPositionList(totalPerHundred, "y"),
+            totalPerMillion: getPositionList(totalPerMillion, "y"),
         };
         setData({
             labels: input_data.labels,
             datasets: [
             {
-                label: "Cases",
-                data: input_data.cases,
+                label: "total",
+                data: input_data.total,
                 borderColor: "rgb(0, 0, 255)",
                 backgroundColor: "rgba(0, 0, 255, 0.5)",
             },
             {
-                label: "Deaths",
-                data: input_data.deaths,
+                label: "daily",
+                data: input_data.daily,
                 borderColor: "rgb(255, 0, 0)",
                 backgroundColor: "rgba(255, 0, 0, 0.5)",
             },
             {
-                label: "Recovered",
-                data: input_data.recovered,
+                label: "totalPerHundred",
+                data: input_data.totalPerHundred,
+                borderColor: "rgb(0, 255, 0)",
+                backgroundColor: "rgba(107,142,35, 0.5)",
+            },
+            {
+                label: "totalPerMillion",
+                data: input_data.totalPerMillion,
                 borderColor: "rgb(0, 255, 0)",
                 backgroundColor: "rgba(107,142,35, 0.5)",
             },
