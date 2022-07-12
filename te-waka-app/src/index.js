@@ -4,7 +4,7 @@ import "./index.css";
 
 // import SimpleExample from "./archive/SimpleExample";
 // import ApiExample from "./archive/ApiExample";
-// import ApiLineExample from "./archive/ApiLineExample";
+import ApiLineExample from "./archive/ApiLineExample";
 import PlotExample from "./archive/PlotExample";
 
 import reportWebVitals from "./archive/useless/reportWebVitals";
@@ -14,7 +14,7 @@ root.render(
   <>
     {/* <SimpleExample />
     <ApiExample /> */}
-    {/* <ApiLineExample /> */}
+    <ApiLineExample />
     <PlotExample />
   </>
 );

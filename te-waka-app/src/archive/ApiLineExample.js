@@ -11,6 +11,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  LogarithmicScale,
 } from "chart.js";
 
 ChartJS.register(
@@ -20,7 +21,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  LogarithmicScale
 );
 
 export const options = {
@@ -35,18 +37,14 @@ export const options = {
     },
   },
   scales: {
-    xAxis: [
-      {
-        type: "time",
-        time: {
-          unit: "day",
-        },
-      },
-    ],
+    y: {
+      type: "logarithmic",
+      position: "right", // `axis` is determined by the position as `'y'`
+    },
   },
 };
 
-const labels = []
+const labels = [];
 
 export const myData = {
   labels,
@@ -130,12 +128,6 @@ export default function ApiLineExample() {
             borderColor: "rgb(255, 0, 0)",
             backgroundColor: "rgba(255, 0, 0, 0.5)",
           },
-          // {
-          //   label: "Recovered",
-          //   data: input_data.recovered,
-          //   borderColor: "rgb(0, 255, 0)",
-          //   backgroundColor: "rgba(107,142,35, 0.5)",
-          // },
         ],
       });
     });
