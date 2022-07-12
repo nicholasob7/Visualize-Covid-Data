@@ -161,7 +161,7 @@ https://momentjs.com/
 
 Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
 
-# Week 2 Day 7-5/07/2022
+# Week 2 Day 7-6/07/2022
 
 **Meeting 10**
 
@@ -172,7 +172,7 @@ Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
 * Nick C had been watching several tutorials.
 * Nick Do urged us to keep working hard and was pleased with the groupds progress.
 
-# Week 2 Day 8-6/07/2022
+# Week 2 Day 8-7/07/2022
 
 **Meeting 11**
 
@@ -182,7 +182,7 @@ Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
 * Nick Chitsamrerng had uploaded a number of chart.js files.
 * Nick Do said that Nicholas should refactor the api calls without making them components.
 
-# Week 2 Day 9-7/07/2022
+# Week 2 Day 9-8/07/2022
 
 **Meeting 12**
 
@@ -190,7 +190,7 @@ Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
 * Nick Do took the other two Nicks on a code follow and demonstrated progress via the console.
 * Nicholas remarked on the similarity of the solution to the simplicity of organising a main file from the previous course assignment.
 
-# Week 3 Day 10-10-2022
+# Week 3 Day 10-11/07/2022
 
 **Meeting 13**
 
@@ -200,3 +200,18 @@ Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
 * Nick Do advised Nicholas ignore deprecation warnings and not uninstall react-scripts again.
 * Nick Chitsamrerng forwarded a github tutorial from "Tech with Tim" to Nicholas.
 * Nicholas was very pleased with the content.
+
+# Week 3 Day 11-12/07/2022
+
+**Meeting 14**
+
+* Held meeting with Nick Do, Nick Chitsamrerng, Nicholas O'Brien.
+* Nick Do a subsequent code follow to complete a rudimentary example calling live disease.sh data into a line chart.
+* Nick Do assessed the task as difficult and wrought with idiosynchracies of javascript.
+* Nick Chitsamrerng and Nicholas O'Brien were impressed by the complexity of the task.
+* Nick Do re-iterated the undesirability of the 'recovered' data available on disease.sh as it ended on 8/04/2021.
+
+**Subsequence**
+
+* After the meeting Nick Chitsamrerng and Nicholas O'Brien agreed that adjustment of the yAxis display for goal visualizations was the most important factor in effective data display via chart.js.
+* Nick Chitsamrerng and Nicholas O'Brien also agreed that 'recovered' data was unsuitable unless a time span was able to be solved for disease.sh data.
