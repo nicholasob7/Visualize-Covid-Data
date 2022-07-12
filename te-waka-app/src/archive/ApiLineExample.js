@@ -31,7 +31,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Deaths vs Recovered in Confirmed Cases - Disease.sh",
+      text: "Deaths vs Confirmed Cases - Disease.sh",
     },
   },
   scales: {
@@ -43,45 +43,41 @@ export const options = {
         },
       },
     ],
+    // yAxis: [
+    //   {
+    //     beginAtZero: true,
+    //     grace: '1.3%',
+    //     // ticks: {
+    //     //   stepSize: 1,
+    //     // }
+    //   },
+    // ],
   },
 };
 
-const labels = [
-  "March 20",
-  "April 20",
-  "May 20",
-  "June 20",
-  "July 20",
-  "August 20",
-  "September 20",
-  "October 20",
-  "November 20",
-  "December 20",
-  "January 21",
-];
-// const labels = [moment("20200320", "YYYYMMDD").fromNow()];
+const labels = []
 
 export const myData = {
   labels,
   datasets: [
     {
       label: "Cases",
-      data: labels.map(() => 1),
+      data: labels.map(() => []),
       borderColor: "rgb(0, 0, 255)",
       backgroundColor: "rgba(0, 0, 255, 0.5)",
     },
     {
       label: "Deaths",
-      data: labels.map(() => 2),
+      data: labels.map(() => []),
       borderColor: "rgb(255, 0, 0)",
       backgroundColor: "rgba(255, 0, 0, 0.5)",
     },
-    {
-      label: "Recovered",
-      data: labels.map(() => 3),
-      borderColor: "rgb(0, 255, 0)",
-      backgroundColor: "rgba(107,142,35, 0.5)",
-    },
+    // {
+    //   label: "Recovered",
+    //   data: labels.map(() => []),
+    //   borderColor: "rgb(0, 255, 0)",
+    //   backgroundColor: "rgba(107,142,35, 0.5)",
+    // },
   ],
 };
 
@@ -120,13 +116,13 @@ export default function ApiLineExample() {
       const data = response;
       const cases = transformDictIntoXYList(data["cases"]);
       const deaths = transformDictIntoXYList(data["deaths"]);
-      const recovered = transformDictIntoXYList(data["recovered"]);
+      // const recovered = transformDictIntoXYList(data["recovered"]);
       const labels = getPositionList(cases, "x");
       const input_data = {
         labels: labels,
         cases: getPositionList(cases, "y"),
         deaths: getPositionList(deaths, "y"),
-        recovered: getPositionList(recovered, "y"),
+        // recovered: getPositionList(recovered, "y"),
       };
       setData({
         labels: input_data.labels,
@@ -143,12 +139,12 @@ export default function ApiLineExample() {
             borderColor: "rgb(255, 0, 0)",
             backgroundColor: "rgba(255, 0, 0, 0.5)",
           },
-          {
-            label: "Recovered",
-            data: input_data.recovered,
-            borderColor: "rgb(0, 255, 0)",
-            backgroundColor: "rgba(107,142,35, 0.5)",
-          },
+          // {
+          //   label: "Recovered",
+          //   data: input_data.recovered,
+          //   borderColor: "rgb(0, 255, 0)",
+          //   backgroundColor: "rgba(107,142,35, 0.5)",
+          // },
         ],
       });
     });
