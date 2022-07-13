@@ -215,3 +215,18 @@ Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
 
 * After the meeting Nick Chitsamrerng and Nicholas O'Brien agreed that adjustment of the yAxis display for goal visualizations was the most important factor in effective data display via chart.js.
 * Nick Chitsamrerng and Nicholas O'Brien also agreed that 'recovered' data was unsuitable unless a time span was able to be solved for disease.sh data.
+
+# Week 3 Day 12-13/07/2022
+
+**Meeting 15**
+
+* Held meeting with Nick Do, Sameera Begum, Nick Chitsamrerng, Nicholas O'Brien.
+* Nick Chitsamrerng and Nicholas O'Brien reported little luck in sourcing information on transformation of the yAxis in the documentation.
+* On investigation Nick Do agreed that the official documentation for react charts2 and charts.js was not helpful for logscale.
+* Nick Do sourced an open source solution for the problem and adjusted the yAxis to a logarithmic progression.
+* Nicholas O'Brien shared a chart of vaccinations he had worked on the previous night which compiled but did not plot data to a display.
+* Nick Do explained that the reason for the failed display was to do with the transformation of a list instead of a dictionary in regards the data format of the different api.
+* With their increased understanding the team agreed to push ahead with up to six visualizations.
+* Nick Do reminded the team to be wary of data too different to present an effecctive comparison visually and to ensure that a variety of chart types were deployed.
+* Nick also reminded the team of the grade structure for the assignment.
+* To ensure we produce a report and a presentation.
