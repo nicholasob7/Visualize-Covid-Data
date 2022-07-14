@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import BarChart from "./archive/ApiBarChart";
 
 // import SimpleExample from "./archive/SimpleExample";
 // import ApiExample from "./archive/ApiExample";
@@ -14,8 +15,10 @@ root.render(
   <>
     {/* <SimpleExample />
     <ApiExample /> */}
-    <ApiLineExample />
-    <PlotExample />
+    {/* <ApiLineExample />
+    <PlotExample /> */}
+    <BarChart />
+
   </>
 );
 
