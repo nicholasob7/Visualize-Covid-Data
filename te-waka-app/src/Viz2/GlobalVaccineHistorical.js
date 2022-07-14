@@ -11,7 +11,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  LogarithmicScale,
 } from "chart.js";
 
 ChartJS.register(
@@ -21,8 +20,7 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend,
-  LogarithmicScale
+  Legend
 );
 
 export const options = {
@@ -33,54 +31,66 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Deaths vs Confirmed Cases - Disease.sh",
+      text: "Vaccinations per Confirmed Cases - Disease.sh",
     },
   },
   scales: {
-    y: {
-      type: "logarithmic",
-      position: "right", // `axis` is determined by the position as `'y'`
-    },
+    xAxis: [
+      {
+        type: "time",
+        time: {
+          unit: "day",
+        },
+      },
+    ],
   },
 };
 
-const labels = [];
+const labels = [0, 1];
 
-export const myData = {
+export const vaccineData = {
   labels,
   datasets: [
     {
-      label: "Cases",
+      label: "total",
       data: labels.map(() => []),
       borderColor: "rgb(0, 0, 255)",
       backgroundColor: "rgba(0, 0, 255, 0.5)",
     },
     {
-      label: "Deaths",
+      label: "daily",
       data: labels.map(() => []),
       borderColor: "rgb(255, 0, 0)",
       backgroundColor: "rgba(255, 0, 0, 0.5)",
     },
-    // {
-    //   label: "Recovered",
-    //   data: labels.map(() => []),
-    //   borderColor: "rgb(0, 255, 0)",
-    //   backgroundColor: "rgba(107,142,35, 0.5)",
-    // },
+    {
+      label: "totalPerHundred",
+      data: labels.map(() => []),
+      borderColor: "rgb(0, 255, 0)",
+      backgroundColor: "rgba(107,142,35, 0.5)",
+    },
+    {
+      label: "dailyPerMillion",
+      data: labels.map(() => []),
+      borderColor: "rgb(0, 255, 0)",
+      backgroundColor: "rgba(107,142,35, 0.5)",
+    },
   ],
 };
 
-export default function ApiLineExample() {
-  const [data, setData] = useState(myData);
+export default function PlotExample() {
+  const [data, setData] = useState(vaccineData);
 
   const transformDatetimeFormat = (input_date) => {
     return moment(input_date, "M-D-YY").format("YYYY-MM-DD");
   };
 
-  const transformDictIntoXYList = (input_dict) => {
+  const transformListIntoXYList = (input_list_of_dict, key) => {
+    console.log(input_list_of_dict);
     let transformed_dict = {};
-    for (const [key, value] of Object.entries(input_dict)) {
-      transformed_dict[transformDatetimeFormat(key)] = value;
+    for (const i in input_list_of_dict) {
+      transformed_dict[transformDatetimeFormat(input_list_of_dict[i]["date"])] =
+        input_list_of_dict[i][key];
     }
     // console.log(transformed_dict);
     let output_list = [];
@@ -101,32 +111,46 @@ export default function ApiLineExample() {
   };
 
   useEffect(() => {
-    api.getHistoricalData().then((response) => {
+    api.getCoverageData().then((response) => {
       const data = response;
-      const cases = transformDictIntoXYList(data["cases"]);
-      const deaths = transformDictIntoXYList(data["deaths"]);
-      // const recovered = transformDictIntoXYList(data["recovered"]);
-      const labels = getPositionList(cases, "x");
+      const total = transformListIntoXYList(data, "total");
+      const daily = transformListIntoXYList(data, "daily");
+      const totalPerHundred = transformListIntoXYList(data, "totalPerHundred");
+      const dailyPerMillion = transformListIntoXYList(data, "dailyPerMillion");
+      const labels = getPositionList(total, "x");
       const input_data = {
         labels: labels,
-        cases: getPositionList(cases, "y"),
-        deaths: getPositionList(deaths, "y"),
-        // recovered: getPositionList(recovered, "y"),
+        total: getPositionList(total, "y"),
+        daily: getPositionList(daily, "y"),
+        totalPerHundred: getPositionList(totalPerHundred, "y"),
+        dailyPerMillion: getPositionList(dailyPerMillion, "y"),
       };
       setData({
         labels: input_data.labels,
         datasets: [
           {
-            label: "Cases",
-            data: input_data.cases,
+            label: "total",
+            data: input_data.total,
             borderColor: "rgb(0, 0, 255)",
             backgroundColor: "rgba(0, 0, 255, 0.5)",
           },
           {
-            label: "Deaths",
-            data: input_data.deaths,
+            label: "daily",
+            data: input_data.daily,
             borderColor: "rgb(255, 0, 0)",
             backgroundColor: "rgba(255, 0, 0, 0.5)",
+          },
+          {
+            label: "totalPerHundred",
+            data: input_data.totalPerHundred,
+            borderColor: "rgb(0, 255, 0)",
+            backgroundColor: "rgb(0, 255, 0)",
+          },
+          {
+            label: "dailyPerMillion",
+            data: input_data.dailyPerMillion,
+            borderColor: "rgba(107,142,35, 0.5)",
+            backgroundColor: "rgba(107,142,35, 0.5)",
           },
         ],
       });

@@ -1,21 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import {createRoot} from "react-dom/client";
 import "./index.css";
 
 // import SimpleExample from "./archive/SimpleExample";
 // import ApiExample from "./archive/ApiExample";
-import ApiLineExample from "./archive/ApiLineExample";
-import PlotExample from "./archive/PlotExample";
+import GlobalHistorical from "./Viz1/GlobalHistorical";
+import GlobalVaccineHistorical from "./Viz2/GlobalVaccineHistorical";
+// import NorthAmerica from "./Viz3/NorthAmerica";
 
 import reportWebVitals from "./archive/useless/reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+const rootElement = document.getElementById("root");
+createRoot(rootElement).render(
   <>
     {/* <SimpleExample />
     <ApiExample /> */}
-    <ApiLineExample />
-    <PlotExample />
+    <GlobalHistorical />
+    <GlobalVaccineHistorical />
+    {/* <NorthAmerica /> */}
+
   </>
 );
 
