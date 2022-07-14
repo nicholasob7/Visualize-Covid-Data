@@ -11,7 +11,7 @@ import {
   Legend
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { isDOMComponent } from "react-dom/test-utils";
+// import { isDOMComponent } from "react-dom/test-utils";
 
 ChartJS.register(
   CategoryScale,
