@@ -33,7 +33,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Deaths vs Confirmed Cases - Disease.sh",
+      text: "Cases, Deaths, Recovered - Disease.sh",
     },
   },
   scales: {
@@ -144,7 +144,7 @@ export default function ApiLineExample() {
 
   return (
     <div className="App">
-      <h1>Te Waka</h1>
+      <h1>Global Logarithmic Scale</h1>
       <Line
         options={options}
         data={data}

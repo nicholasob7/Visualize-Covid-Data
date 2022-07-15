@@ -8,14 +8,14 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 
-export default function DoughnutChart() {
+export default function NorthAmericanDoughnut() {
     const [countries, setCountries] = useState([]);
 
 
-debugger
+
 
 useEffect(() => {
-    api.getCountriesData()
+    api.getBiggestNorthAmerica()
     .then((data) => setCountries(data))
 }, []);
 
@@ -24,7 +24,7 @@ useEffect(() => {
         datasets: [
             {
             label: "Cases",
-            data: countries.map((countries) => countries.cases),
+            data: countries.map((countries) => countries.Cases),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.5)',
                 'rgba(54, 162, 235, 0.5)',

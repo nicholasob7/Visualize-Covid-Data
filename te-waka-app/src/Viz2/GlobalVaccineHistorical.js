@@ -31,7 +31,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Vaccinations per Confirmed Cases - Disease.sh",
+      text: "Vaccinations Total, Daily, Total per 100 cases, Daily per million of World Population - Disease.sh",
     },
   },
   scales: {
@@ -160,7 +160,7 @@ export default function PlotExample() {
 
   return (
     <div className="App">
-      <h1>Te Waka</h1>
+      <h1>Global Vaccinations</h1>
       <Line
         options={options}
         data={data}

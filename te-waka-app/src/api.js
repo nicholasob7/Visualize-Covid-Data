@@ -36,7 +36,7 @@ const api = {
   },
 
   getBiggestNorthAmerica: async () => {
-    const response = await fetch("https://disease.sh/v3/covid-19/countries/USA%2C%20Mexico%2C%20Canada%2C%20Guatemala%2C%20Cuba");
+    const response = await fetch("https://disease.sh/v3/covid-19/historical/USA%2C%20Mexico%2CCanada%2C%20Guatemala%2C%20Cuba?lastdays=1s");
     return await response.json();
   },
 

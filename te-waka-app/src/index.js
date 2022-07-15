@@ -7,7 +7,7 @@ import "./index.css";
 import GlobalHistorical from "./Viz1/GlobalHistorical";
 import GlobalVaccineHistorical from "./Viz2/GlobalVaccineHistorical";
 import ContinentsDoughnut from "./Viz3/ContinentsDoughnut";
-import NorthAmericanCountries from "./Viz4/NorthAmericanCountries";
+import ContinentsPolar from "./Viz4/ContinentsPolar";
 
 
 import reportWebVitals from "./archive/useless/reportWebVitals";
@@ -20,7 +20,7 @@ createRoot(rootElement).render(
     <GlobalHistorical />
     <GlobalVaccineHistorical />
     <ContinentsDoughnut />
-    <NorthAmericanCountries />
+    <ContinentsPolar />
 
   </>
 );
