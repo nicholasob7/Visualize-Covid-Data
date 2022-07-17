@@ -8,6 +8,10 @@ import GlobalHistorical from "./Viz1/GlobalHistorical";
 import GlobalVaccineHistorical from "./Viz2/GlobalVaccineHistorical";
 import ContinentsDoughnut from "./Viz3/ContinentsDoughnut";
 import ContinentsPolar from "./Viz4/ContinentsPolar";
+import APIBarChart from "./Viz5/APIBarChart";
+// import GlobalLineChart from "./Viz1/GlobalLineChart";
+// import Countries from "./Viz5/Countries";
+
 
 
 import reportWebVitals from "./archive/useless/reportWebVitals";
@@ -21,6 +25,10 @@ createRoot(rootElement).render(
     <GlobalVaccineHistorical />
     <ContinentsDoughnut />
     <ContinentsPolar />
+    <APIBarChart />
+
+    {/* <GlobalLineChart /> */}
+    {/* <Countries /> */}
 
   </>
 );
