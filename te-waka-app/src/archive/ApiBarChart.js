@@ -11,7 +11,7 @@ import {
   Legend
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { isDOMComponent } from "react-dom/test-utils";
+
 
 ChartJS.register(
   CategoryScale,
@@ -35,8 +35,7 @@ useEffect(() => {
   .then((data) => setContinents(data))
 }, []);
 
-
-    const labels = continents.map((label) => label.continent);
+    const labels = continents.map((continent) => continent.continent);
 
     const data = {
       labels: labels,
@@ -68,8 +67,11 @@ useEffect(() => {
     return (
       <div className="App">
         <h1>Covid-19 testing in continents</h1>
-        <Bar data={data} 
-        />
+        <Bar data={data}></Bar> 
+           
+
+           
+
 
       </div>
     );
