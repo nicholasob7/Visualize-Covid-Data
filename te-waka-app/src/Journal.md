@@ -102,3 +102,23 @@ Nick Do demonstrated the complexity of calling and plotting live data from an AP
 Nick Do pointed out that despite his 5 years of experience he found it quite a challenge to quickly script the required functions and components. Nick Do completed this work in two sessions of around an hour each.
 
 This was very enlightening for the team and boosted team morale significantly. Of great importance to the team was Nick Do's knowledge of search terms and resources in the completion of this task.
+
+# Week Three Personal Challenges
+
+**Deprecations, Dependencies/ Packages and Github**
+
+Nick Do had produced a compiling visualization of hard coded non API data from a series of resources on the Friday of Week Two.
+
+I attempted an advance on his example and ran into a rabbithole of deprecation warnings from the react compiler.  Evetually I had uninstalled react-scripts and could not resolve a compiling script which actually displayed our code progress.
+
+Not having gained fluency in practical application of my own Github Branch this led to several instances of me issuing invitations to team members of a new repository on GitHub that would compile for team work over the weekend period between week two and week three.
+
+This situations was resolved by Nick Do through the early part of week three.
+
+Nick C also forwarded a Github tutorial from "Tech with Tim" on Youtube which was very helpful in my ability to generate my own branch and working on it without thinking to abandon our original repository.
+
+# Week Four Directions
+
+**Successful Visualizations, AWS Scripts and deliberations on HTML and Dashboard Format**
+
+Week Four saw the team with compiling and displaying plotted charts from live API calls. Our script solutions for AWS deployment are intact and team members are busy organising personal journals, dashboard styling of our visualizations and deliberation on our ability to generate a globe map chart of Covid 19 data.,
