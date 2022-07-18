@@ -7,15 +7,15 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 export default function PieChart() {
-  const [contries, setContries] = useState([]);
+  const [countries, setCountries] = useState([]);
     
   useEffect(()=> {
-    api.getCountriesData().then((data) => setContries(data))
+    api.getCountriesData().then((data) => setCountries(data))
   }, []);
-    //    console.log(contries);  
-       let Austerlia, NewZealand, Deathdata, Populationdata, Activedata, Recovereddata
+    //    console.log(countries);  
+       let Austerlia, NewZealand, Newzealanddata, Austerliadata 
        let piediv = <div>sameera</div>
-    for (const contry of contries) {
+    for (const contry of countries) {
         if (contry.country =="Australia") {
             Austerlia = contry
             
@@ -28,91 +28,91 @@ export default function PieChart() {
     }
         
     console.log(Austerlia, NewZealand);   
-      const labels = contries.map((label) => label.contries);
+      const labels = countries.map((label) => label.countries);
        if (Austerlia) {
         
        
-     Deathdata = {
-        labels: ['NewZealand', 'Austerlia'],
+     Newzealanddata = {
+        labels: ['NewZealand Death', 'NewZealand Recoverd', 'NewZealand Population', 'NewZealand Active'],
       
     
         datasets: [
           {
             label : "Test per one Million",
-            data: [NewZealand.deaths,Austerlia.deaths],
+            data: [NewZealand.deaths, NewZealand.recovered, NewZealand.population, NewZealand.active],
                 backgroundColor:[
                   'red',
                   'blue',
-                  'yellow'
+                  'yellow',
+                  'gray'
                 ]
             },
             
           ],
            
         }
-     Populationdata = {
-            labels: ['NewZealand', 'Austerlia'],
+     Austerliadata = {
+            labels: ['Austerlia Death', 'Austerlia Recovered', 'Austerlia Papulation', 'Austerlia Active'],
           
         
             datasets: [
               
                 {
                     label : "Test per one Million",
-                    data: [NewZealand.population,Austerlia.population],
+                    data: [Austerlia.deaths, Austerlia.recovered, Austerlia.population, Austerlia.active],
                         backgroundColor:[
                           'red',
                           'blue',
-                          'yellow'
+                          'yellow',
+                          'gray'
                         ]
                     },
               ],
                
         }
-
-            piediv = <div><Pie data={Deathdata}/>
-            <Pie data={Populationdata}/></div>
         
-      Recovereddata = {
-            labels: ['NewZealand', 'Austerlia'],
+      //  Recovereddata = {
+      //       labels: ['NewZealand', 'Austerlia'],
           
         
-            datasets: [
-              {
-                label : "Test per one Million",
-                data: [NewZealand.recovered,Austerlia.recovered],
-                    backgroundColor:[
-                      'red',
-                      'blue',
-                      'yellow'
-                    ]
-                },
+      //       datasets: [
+      //         {
+      //           label : "Test per one Million",
+      //           data: [NewZealand.recovered,Austerlia.recovered],
+      //               backgroundColor:[
+      //                 'red',
+      //                 'blue',
+      //                 'yellow',
+
+      //               ]
+      //           },
                 
-              ],
+      //         ],
 
                
-        } 
-       Activedata = {
-                labels: ['NewZealand', 'Austerlia'],
+      //   } 
+      // Activedata = {
+      //           labels: ['NewZealand', 'Austerlia'],
               
             
-                datasets: [
-                  {
-                    label : "Test per one Million",
-                    data: [NewZealand.active,Austerlia.active],
-                        backgroundColor:[
-                          'red',
-                          'blue',
-                          'yellow'
-                        ]
-                    },
+      //           datasets: [
+      //             {
+      //               label : "Test per one Million",
+      //               data: [NewZealand.active,Austerlia.active],
+      //                   backgroundColor:[
+      //                     'red',
+      //                     'blue',
+      //                     'yellow'
+      //                   ]
+      //               },
                     
-                  ],
+      //             ],
                    
-        }  
-        piediv = <div><Pie data={Deathdata}/>
-        <Pie data={Populationdata}/>
-        <Pie data={Activedata}/>
-        <Pie data={Recovereddata}/>
+      //   }  
+        piediv = <div><Pie data={Newzealanddata}/>
+        <Pie data={Austerliadata}/>
+        {/* <Pie data={Activedata}/>
+        <Pie data={Recovereddata}/> */}
         </div>
        }       
                 
