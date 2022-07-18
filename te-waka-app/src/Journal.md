@@ -113,9 +113,9 @@ I attempted an advance on his example and ran into a rabbithole of deprecation w
 
 Not having gained fluency in practical application of my own Github Branch this led to several instances of me issuing invitations to team members of a new repository on GitHub that would compile for team work over the weekend period between week two and week three.
 
-This situations was resolved by Nick Do through the early part of week three.
+This situation was resolved by Nick Do through the early part of week three.
 
-Nick C also forwarded a Github tutorial from "Tech with Tim" on Youtube which was very helpful in my ability to generate my own branch and working on it without thinking to abandon our original repository.
+Nick C also forwarded a Github tutorial from "Tech with Tim" on Youtube which was very helpful in my ability to generate my own branch without thinking to abandon our original repository.
 
 # Week Four Directions
 
