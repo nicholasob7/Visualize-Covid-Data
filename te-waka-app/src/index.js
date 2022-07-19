@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import BarChart from "./archive/ApiBarChart";
+import "bootstrap/dist/css/bootstrap.min.css"
 // import DougnutChart from "./archive/ApiDougnut";
-import ApiPie from "./archive/ApiBarChart2";
-
 
 
 // import SimpleExample from "./archive/SimpleExample";
@@ -17,24 +16,21 @@ import ApiLineExample from "./archive/ApiLineExample";
 // import PieChartScreen from "./archive/ApiBarChart2";
 // import DoughnutChart from "./archive/ApiBarChart2";
 // import BarTwo from "./archive/ApiHorizontal";
-import Map from "./archive/Map";
-
-
-
-
-
+// import Map from "./archive/NewMap";
+import Covid19 from './components/Covid19'
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
+   
     {/* <SimpleExample />
     <ApiExample /> */}
-    <Map />
     {/* <ApiLineExample /> */}
-    {/* <PlotExample /> */} */}
+    {/* <PlotExample />  */}
     {/* <BarChart /> */}
     {/* <DoughnutChart/> */}
+    <Covid19 />
    
 
     {/* <PieChartScreen/> */}
