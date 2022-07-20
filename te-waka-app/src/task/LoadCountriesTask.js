@@ -29,7 +29,7 @@ class LoadCountriesTask {
   #processCovidData = (covidCountries) => {
     for (let i = 0; i < data.features.length; i++) {
       country = data.features[i];
-
+      console.log(country)
       covidCountry = covidCountries.find(
         (covidCountry) =>
           country.properties.ADMIN === covidCountry.Country_Region
