@@ -13,11 +13,11 @@ export default function PieChart() {
     api.getCountriesData().then((data) => setCountries(data))
   }, []);
     //    console.log(countries);  
-       let Austerlia, NewZealand, Newzealanddata, Austerliadata 
+       let Australia, NewZealand, Newzealanddata, Australiadata 
        let piediv = <div>sameera</div>
     for (const contry of countries) {
         if (contry.country =="Australia") {
-            Austerlia = contry
+            Australia = contry
             
         }
         if (contry.country =="New Zealand") {
@@ -27,49 +27,53 @@ export default function PieChart() {
         
     }
         
-    console.log(Austerlia, NewZealand);   
+    console.log(Australia, NewZealand);   
       const labels = countries.map((label) => label.countries);
-       if (Austerlia) {
+       if (NewZealand) {
         
        
      Newzealanddata = {
-        labels: ['NewZealand Death', 'NewZealand Recoverd', 'NewZealand Population', 'NewZealand Active'],
+        labels: ['Australia Death', 'Australia Recovered',  'Australia Active', 'NewZealand Death', 'NewZealand Recoverd', 'NewZealand Active'],
       
     
         datasets: [
           {
             label : "Test per one Million",
-            data: [NewZealand.deaths, NewZealand.recovered, NewZealand.population, NewZealand.active],
+            data: [Australia.deaths, Australia.recovered, Australia.active, NewZealand.deaths, NewZealand.recovered, NewZealand.active,],
                 backgroundColor:[
                   'red',
                   'blue',
                   'yellow',
-                  'gray'
-                ]
+                  'gray',
+                  'green',
+                  'pink'
+                ],
+                // borderWidth: 3,
+                // radius : 400
             },
             
           ],
            
         }
-     Austerliadata = {
-            labels: ['Austerlia Death', 'Austerlia Recovered', 'Austerlia Papulation', 'Austerlia Active'],
+    //  Australiadata = {
+    //         labels: ['Australia Death', 'Australia Recovered',  'Australia Active'],
           
         
-            datasets: [
+    //         datasets: [
               
-                {
-                    label : "Test per one Million",
-                    data: [Austerlia.deaths, Austerlia.recovered, Austerlia.population, Austerlia.active],
-                        backgroundColor:[
-                          'red',
-                          'blue',
-                          'yellow',
-                          'gray'
-                        ]
-                    },
-              ],
+    //             {
+    //                 label : "Test per one Million",
+    //                 data: [Australia.deaths, Australia.recovered, Australia.population, Australia.active],
+    //                     backgroundColor:[
+    //                       'red',
+    //                       'blue',
+    //                       'yellow',
+    //                       'gray'
+    //                     ]
+    //                 },
+    //           ],
                
-        }
+    //     }
         
       //  Recovereddata = {
       //       labels: ['NewZealand', 'Austerlia'],
@@ -110,14 +114,14 @@ export default function PieChart() {
                    
       //   }  
         piediv = <div><Pie data={Newzealanddata}/>
-        <Pie data={Austerliadata}/>
+        {/* <Pie data={Australiadata}/> */}
         {/* <Pie data={Activedata}/>
         <Pie data={Recovereddata}/> */}
         </div>
        }       
                 
     return (
-    <div className="App" style={{width:'30%', height:'30%'}}>
+    <div className="App" style={{width:'80%', height:'80%'}}>
       <h1>Covid19 testing in Contries</h1>
       {piediv}
       
