@@ -32,12 +32,12 @@ export default function PieChart() {
         if (Australia) {
         
         Deathdata = {
-            labels: ['NewZealand', 'Australia'],
+            labels: ['NewZealand Deaths', 'Australia Deaths'],
         
     
         datasets: [
             {
-            label : "Test per one Million",
+            label : "Tests per one Million",
             data: [NewZealand.deaths,Australia.deaths],
                 backgroundColor:[
                     'red',
