@@ -12,7 +12,6 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -21,8 +20,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-
 
 export default function BarChart() {
       const [continents, setContinents] = useState([]);

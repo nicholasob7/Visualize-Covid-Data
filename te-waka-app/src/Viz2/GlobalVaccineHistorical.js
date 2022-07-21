@@ -31,7 +31,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Vaccinations per Confirmed Cases - Disease.sh",
+      text: "Vaccinations Total, Daily, Total per 100 cases, Daily per million of World Population - Disease.sh",
     },
   },
   scales: {
@@ -128,24 +128,24 @@ export default function PlotExample() {
       setData({
         labels: input_data.labels,
         datasets: [
-          // {
-          //   label: "total",
-          //   data: input_data.total,
-          //   borderColor: "rgb(0, 0, 255)",
-          //   backgroundColor: "rgba(0, 0, 255, 0.5)",
-          // },
-          // {
-          //   label: "daily",
-          //   data: input_data.daily,
-          //   borderColor: "rgb(255, 0, 0)",
-          //   backgroundColor: "rgba(255, 0, 0, 0.5)",
-          // },
-          // {
-          //   label: "totalPerHundred",
-          //   data: input_data.totalPerHundred,
-          //   borderColor: "rgb(0, 255, 0)",
-          //   backgroundColor: "rgb(0, 255, 0)",
-          // },
+          {
+            label: "total",
+            data: input_data.total,
+            borderColor: "rgb(0, 0, 255)",
+            backgroundColor: "rgba(0, 0, 255, 0.5)",
+          },
+          {
+            label: "daily",
+            data: input_data.daily,
+            borderColor: "rgb(255, 0, 0)",
+            backgroundColor: "rgba(255, 0, 0, 0.5)",
+          },
+          {
+            label: "totalPerHundred",
+            data: input_data.totalPerHundred,
+            borderColor: "rgb(0, 255, 0)",
+            backgroundColor: "rgb(0, 255, 0)",
+          },
           {
             label: "dailyPerMillion",
             data: input_data.dailyPerMillion,
@@ -160,7 +160,7 @@ export default function PlotExample() {
 
   return (
     <div className="App">
-      <h1>Te Waka</h1>
+      <h1>Global Vaccinations</h1>
       <Line
         options={options}
         data={data}
