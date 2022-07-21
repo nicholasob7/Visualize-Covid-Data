@@ -1,5 +1,5 @@
 import React from "react";
-import {createRoot} from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 
 // import SimpleExample from "./archive/SimpleExample";
@@ -10,6 +10,8 @@ import ContinentsDoughnut from "./Viz3/ContinentsDoughnut";
 import ContinentsPolar from "./Viz4/ContinentsPolar";
 import APIBarChart from "./Viz5/APIBarChart";
 import PieChart from "./Viz6/PieChart";
+import PieChartTwo from "./Viz6/PieChartTwo";
+import RadarChart from "./Viz6/RadarChart";
 // import GlobalLineChart from "./Viz1/GlobalLineChart";
 // import Countries from "./Viz5/Countries";
 
@@ -28,6 +30,8 @@ createRoot(rootElement).render(
     <ContinentsPolar />
     <APIBarChart />
     <PieChart />
+    <PieChartTwo />
+    <RadarChart />
 
     {/* <GlobalLineChart /> */}
     {/* <Countries /> */}
