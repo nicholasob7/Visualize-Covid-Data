@@ -26,9 +26,9 @@ root.render(
    
     {/* <SimpleExample />
     <ApiExample /> */}
-    {/* <ApiLineExample /> */}
+    <ApiLineExample />
     {/* <PlotExample />  */}
-    {/* <BarChart /> */}
+    <BarChart />
     {/* <DoughnutChart/> */}
     <Covid19 />
    
