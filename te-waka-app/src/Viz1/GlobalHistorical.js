@@ -33,7 +33,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Deaths vs Confirmed Cases - Disease.sh",
+      text: "Cases, Deaths, Recovered - Disease.sh",
     },
   },
   scales: {
@@ -61,12 +61,12 @@ export const myData = {
       borderColor: "rgb(255, 0, 0)",
       backgroundColor: "rgba(255, 0, 0, 0.5)",
     },
-    // {
-    //   label: "Recovered",
-    //   data: labels.map(() => []),
-    //   borderColor: "rgb(0, 255, 0)",
-    //   backgroundColor: "rgba(107,142,35, 0.5)",
-    // },
+    {
+      label: "Recovered",
+      data: labels.map(() => []),
+      borderColor: "rgb(0, 255, 0)",
+      backgroundColor: "rgba(107,142,35, 0.5)",
+    },
   ],
 };
 
@@ -103,15 +103,17 @@ export default function ApiLineExample() {
   useEffect(() => {
     api.getHistoricalData().then((response) => {
       const data = response;
+      // console.log(response)
+      // debugger pauses code run and opens a debugger in browser.
       const cases = transformDictIntoXYList(data["cases"]);
       const deaths = transformDictIntoXYList(data["deaths"]);
-      // const recovered = transformDictIntoXYList(data["recovered"]);
+      const recovered = transformDictIntoXYList(data["recovered"]);
       const labels = getPositionList(cases, "x");
       const input_data = {
         labels: labels,
         cases: getPositionList(cases, "y"),
         deaths: getPositionList(deaths, "y"),
-        // recovered: getPositionList(recovered, "y"),
+        recovered: getPositionList(recovered, "y"),
       };
       setData({
         labels: input_data.labels,
@@ -128,6 +130,12 @@ export default function ApiLineExample() {
             borderColor: "rgb(255, 0, 0)",
             backgroundColor: "rgba(255, 0, 0, 0.5)",
           },
+          {
+            label: "Recovered",
+            data: input_data.recovered,
+            borderColor: "rgb(0, 255, 0)",
+            backgroundColor: "rgba(107,142,35, 0.5)",
+          },
         ],
       });
     });
@@ -136,7 +144,7 @@ export default function ApiLineExample() {
 
   return (
     <div className="App">
-      <h1>Te Waka</h1>
+      <h1>Global Logarithmic Scale</h1>
       <Line
         options={options}
         data={data}

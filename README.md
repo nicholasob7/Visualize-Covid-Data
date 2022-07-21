@@ -159,7 +159,9 @@ https://momentjs.com/
 
 **Meeting 9**
 
-Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum
+* Held meeting with Nick Do, Nick Chitsamrerng, Sameera Begum.
+* Nick Do discussed react-simple-map, sending a link to simple-map sandbox, targeting Nick Chitsamrerng and Nicholas O'Brien.
+* Nick Do discussed cloudfront distribution and S3 buckets with Sameera.
 
 # Week 2 Day 7-6/07/2022
 
