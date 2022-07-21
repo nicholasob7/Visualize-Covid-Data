@@ -37,6 +37,15 @@ const api = {
 
   getCountriesTotals: async () => {
     const response = await fetch("https://disease.sh/v3/covid-19/countries?yesterday=null&sort=active");
+     return await response.json();
+
+  getPieData: async () => {
+    const response = await fetch("https://covid19.mathdro.id/api");
+    return await response.json();
+  },
+
+  getNzAusData: async () => {
+    const response = await fetch("https://disease.sh/v3/covid-19/countries/new%20zealand%2C%20australia");
     return await response.json();
   },
 };
