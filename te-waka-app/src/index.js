@@ -29,7 +29,7 @@ import RadarChart from "./Viz6/RadarChart";
 // import DoughnutChart from "./archive/ApiBarChart2";
 // import BarTwo from "./archive/ApiHorizontal";
 // import Map from "./archive/NewMap";
-// import Covid19 from './components/Covid19'
+import Covid19 from './components/Covid19'
 
 
 const rootElement = document.getElementById("root");
@@ -47,12 +47,12 @@ createRoot(rootElement).render(
     <PieChart />
     <PieChartTwo />
     <RadarChart />
+  
 
     {/* <GlobalLineChart /> */}
     {/* <Countries /> */}
-    <ApiLineExample />
+    {/* <ApiLineExample /> */}
     {/* <PlotExample />  */}
-    <BarChart />
     {/* <DoughnutChart/> */}
     <Covid19 />
     {/* <PieChartScreen/> */}
