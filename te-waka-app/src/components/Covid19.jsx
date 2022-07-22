@@ -3,8 +3,8 @@ import Header from "./Header";
 import Loading from "./Loading";
 import CovidMap from "./CovidMap";
 import Legend from "./Legend";
-import LoadCountriesTask from "../task/LoadCountriesTask";
-import legendItems from "../entities/LegendItems";
+import LoadCountriesTask from "./LoadCountriesTask";
+import legendItems from "./LegendItems";
 
 const Covid19 = () => {
   const [countries, setCountries] = useState([]);

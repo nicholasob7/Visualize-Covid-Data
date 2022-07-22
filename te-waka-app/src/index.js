@@ -4,7 +4,7 @@ import "./index.css";
 import BarChart from "./archive/ApiBarChart";
 import "bootstrap/dist/css/bootstrap.min.css"
 // import DougnutChart from "./archive/ApiDougnut";
-import PieChart from "./archive/pie";
+// import PieChart from "./archive/pie";
 
 
 // import SimpleExample from "./archive/SimpleExample";
@@ -61,7 +61,7 @@ createRoot(rootElement).render(
     {/* <ApiLineExample />
     <PlotExample /> */}
     {/* <BarChart /> */}
-     <PieChart />  
+     {/* <PieChart />   */}
      
 
   </>
