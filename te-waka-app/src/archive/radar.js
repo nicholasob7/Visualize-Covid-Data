@@ -30,6 +30,7 @@ export default function RadarChart() {
          let Australia, NewZealand, Newzealanddata, Australiadata 
          let piediv = <div>sameera</div>
       for (const contry of countries) {
+        
           if (contry.country =="Australia") {
               Australia = contry
               
@@ -83,7 +84,7 @@ export default function RadarChart() {
         }       
                        
            return (
-           <div className="App" style={{width:'80%', height:'80%'}}>
+           <div className="App" style={{width:'60%', height:'60%'}}>
              <h1>Covid19 Australia VS NewZealand</h1>
              {piediv}
              

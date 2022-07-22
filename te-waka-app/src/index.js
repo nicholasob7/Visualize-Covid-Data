@@ -20,8 +20,8 @@ root.render(
     {/* <ApiLineExample />
     <PlotExample /> */}
     {/* <BarChart /> */}
-    {/* <PieChart /> */}
-    <RadarChart />
+     <PieChart />  
+      {/* <RadarChart />   */}
 
   </>
 );
