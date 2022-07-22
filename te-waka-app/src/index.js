@@ -4,6 +4,7 @@ import "./index.css";
 import BarChart from "./archive/ApiBarChart";
 import "bootstrap/dist/css/bootstrap.min.css"
 // import DougnutChart from "./archive/ApiDougnut";
+import PieChart from "./archive/pie";
 
 
 // import SimpleExample from "./archive/SimpleExample";
@@ -57,6 +58,11 @@ createRoot(rootElement).render(
     <Covid19 />
     {/* <PieChartScreen/> */}
 
+    {/* <ApiLineExample />
+    <PlotExample /> */}
+    {/* <BarChart /> */}
+     <PieChart />  
+     
 
   </>
 );
