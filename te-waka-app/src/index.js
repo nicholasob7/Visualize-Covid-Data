@@ -31,6 +31,7 @@ import RadarChart from "./Viz6/RadarChart";
 // import BarTwo from "./archive/ApiHorizontal";
 // import Map from "./archive/NewMap";
 import Covid19 from './components/Covid19'
+import NewCovid19 from "./components_new/NewCovid19";
 
 
 const rootElement = document.getElementById("root");
@@ -56,6 +57,7 @@ createRoot(rootElement).render(
     {/* <PlotExample />  */}
     {/* <DoughnutChart/> */}
     <Covid19 />
+    <NewCovid19 />
     {/* <PieChartScreen/> */}
 
     {/* <ApiLineExample />
