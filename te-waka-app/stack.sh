@@ -1,0 +1,1 @@
+aws cloudformation deploy --template-file test4.yml --stack-name mystack  --region us-east-1

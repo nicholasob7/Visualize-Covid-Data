@@ -1,0 +1,65 @@
+Description: >
+  Script to create a S3 bucket and Cloudfront distribution.
+Parameters:
+  DomainName:
+    Type: String
+    Description: The domain name
+    Default: www.arfanfirst.ml  
+Resources:
+  #  Cert:
+  #   Type: AWS::CertificateManager::Certificate
+  #   Properties:
+  #     DomainName: '*.arfanfirst.ml'
+  #     DomainValidationOptions:
+  #        - DomainName: 'arfanfirst.ml'
+  #          HostedZoneId: Z09615161V1KU1L4ILEL8
+  #     ValidationMethod: DNS
+  Oai:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties: 
+      CloudFrontOriginAccessIdentityConfig:  
+        Comment: 'OAI user for demo S3 website'
+  WWWBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: www.arfanfirst.ml
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+  BucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    DependsOn:
+      - Oai
+    Properties:
+      Bucket: !Ref WWWBucket
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: 1
+            Effect: Allow
+            Action: 's3:GetObject'
+            Principal: 
+              AWS:  !Sub  arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${Oai}
+            Resource:  !Join ['', ['arn:aws:s3:::', !Ref WWWBucket, '/*']]  
+  cloudfrontdistribution:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - WWWBucket
+      - Oai
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName:  !Sub ${WWWBucket}.s3.${AWS::Region}.amazonaws.com
+          Id: !Sub ${WWWBucket}.s3.${AWS::Region}.amazonaws.com
+          S3OriginConfig:
+            OriginAccessIdentity:
+              !Join ['', ['origin-access-identity/cloudfront/', !Ref Oai ]]  
+        DefaultCacheBehavior:
+          Compress: true
+          ForwardedValues:
+            QueryString: false
+          TargetOriginId: !Sub ${WWWBucket}.s3.${AWS::Region}.amazonaws.com
+          ViewerProtocolPolicy: redirect-to-https
+          DefaultRootObject: index.html
+        Enabled: true
+        PriceClass: PriceClass_All                    
