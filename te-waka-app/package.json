@@ -16,12 +16,8 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^4.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-leaflet": "^4.0.1",
     "react-map-gl": "^7.0.17",
-=======
-    "react-script": "^2.0.5",
->>>>>>> origin/Sam
     "react-scripts": "^5.0.1",
     "safe-string": "^1.0.1",
     "url": "^0.11.0",
