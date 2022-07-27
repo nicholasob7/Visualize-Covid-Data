@@ -1,85 +1,68 @@
-import React, { useState } from 'react';
-import {
-    FaTh,
-    FaBars,
-    FaUserAlt,
-    FaRegChartBar,
-    FaCommentAlt,
-    FaShoppingBag,
-    FaThList
-} from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { SiShopware } from 'react-icons/si';
+import { MdOutlineCancel } from 'react-icons/md';
+import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 
-const Sidebar = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
-    const menuItem = [
-        {
-            path: "/",
-            name: "Dashboard",
-            icon: <FaTh />
-        },
-        {
-            path: "/world-cases",
-            name: "World Cases",
-            icon: <FaUserAlt />
-        },
-        {
-            path: "/world-deaths",
-            name: "World Deaths",
-            icon: <FaRegChartBar />
-        },
-        {
-            path: "/global-historical",
-            name: "Global Historical",
-            icon: <FaCommentAlt />
-        },
-        {
-            path: "/global-vaccine-historical",
-            name: "Global Vaccine Historical",
-            icon: <FaShoppingBag />
-        },
-        {
-            path: "/continents-doughnut",
-            name: "Continents Doughnut",
-            icon: <FaThList />
-        },
-        {
-            path: "/continents-polar",
-            name: "Continents Polar",
-            icon: <FaThList />
-        },
-        {
-            path: "/api-bar-chart",
-            name: "API Bar Chart",
-            icon: <FaThList />
-        },
-        {
-            path: "/pie",
-            name: "Pie Chart",
-            icon: <FaThList />
+import { useStateContext } from '../contexts/ContextProvider';
+
+const Sidebar = () => {
+    const { currentColor, activeMenu, setActiveMenu, screenSize } = useStateContext();
+
+    const handleCloseSideBar = () => {
+        if (activeMenu !== undefined && screenSize <= 900) {
+            setActiveMenu(false);
         }
-    ]
+    };
+
+    const activeLink = "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-md m-2";
+    const normalLink = "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
+
     return (
-        <div className="container">
-            <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
-                <div className="top_section">
-                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Logo</h1>
-                    <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
-                        <FaBars onClick={toggle} />
+        <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
+            {activeMenu && (
+                <>
+                    <div className="flex justify-between items-center">
+                        <Link to="/" onClick={handleCloseSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+                            <SiShopware /> <span>Te Waka Covid 19</span>
+                        </Link>
+                        <TooltipComponent content="Menu" position="BottomCenter">
+                            <button
+                                type="button"
+                                onClick={() => setActiveMenu(!activeMenu)}
+                                style={{ color: currentColor }}
+                                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
+                            >
+                                <MdOutlineCancel />
+                            </button>
+                        </TooltipComponent>
                     </div>
-                </div>
-                {
-                    menuItem.map((item, index) => (
-                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                            <div className="icon">{item.icon}</div>
-                            <div style={{ display: isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
-                        </NavLink>
-                    ))
-                }
-            </div>
-            <main>{children}</main>
+                    <div className="mt-10 ">
+                        {links.map((item) => (
+                            <div key={item.title}>
+                                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
+                                    {item.title}
+                                </p>
+                                {item.links.map((link) => (
+                                    <NavLink
+                                        to={`/${link.name}`}
+                                        key={link.name}
+                                        onClick={handleCloseSideBar}
+                                        style={({ isActive }) => ({
+                                            backgroundColor: isActive ? currentColor : '',
+                                        })}
+                                        className={({ isActive }) => (isActive ? activeLink : normalLink)}
+                                    >
+                                        {link.icon}
+                                        <span className="capitalize ">{link.name}</span>
+                                    </NavLink>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 };
