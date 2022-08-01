@@ -23,28 +23,6 @@ Organized in fulfillment of a group project assessed as part of a final mark for
 Organizing live data to facilitate comparison and analysis with static historical data and interpretation.
 Easy to understand, update, upgrade.
 
-# Data Source
-
-**disease.sh - Open Disease Data API**
-
-```
-https://disease.sh/
-```
-
-# Requirements
-
-charts.js
-
-```
-https://www.chartjs.org/
-```
-
-moment.js
-
-```
-https://momentjs.com/
-```
-
 # Day 1-28/06/2022
 
 **Tuesday**
