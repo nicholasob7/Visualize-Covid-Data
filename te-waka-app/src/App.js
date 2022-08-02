@@ -12,10 +12,10 @@ import {
 
 import "./App.css";
 
-import { useStateContext } from './contexts/ContextProvider';
+// import { useStateContext } from './contexts/ContextProvider';
 
 const App = () => {
-    const { activeMenu } = useStateContext();
+    const activeMenu = true;
 
     return (
         <BrowserRouter>
