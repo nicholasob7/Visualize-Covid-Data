@@ -68,12 +68,17 @@
 * Received message that Instructor could join a call the following day.
 * Began consolidating questions and issues for instructor.
 
-# Week 6 Monday 1/07/22
+# Week 6 Monday 1/08/22
 
 * Resolved to reschedule instructor call until I had tried a few things in svelte or React.
 * Wrote Journal Days and parts of Report md files and uploaded them to student repo.
 
-# Week 6 Tuesday 2/07/22
+# Week 6 Tuesday 2/08/22
 
 * Removed syncfusion components and worked with a new tutorial.
 * Using react, react-routerDOM, chart.js, react-chartjs-2 and sass managed to get some charts displaying on route pages without styling.
+
+# Week 6 Wednesday 3/08/22
+
+* Successfully compiled all routes to seperate pages.
+* Next Step implement navbar and sidebar.
