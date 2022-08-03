@@ -72,3 +72,8 @@
 
 * Resolved to reschedule instructor call until I had tried a few things in svelte or React.
 * Wrote Journal Days and parts of Report md files and uploaded them to student repo.
+
+# Week 6 Tuesday 2/07/22
+
+* Removed syncfusion components and worked with a new tutorial.
+* Using react, react-routerDOM, chart.js, react-chartjs-2 and sass managed to get some charts displaying on route pages without styling.

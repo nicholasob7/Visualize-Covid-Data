@@ -6,14 +6,14 @@ import {
 import Home from './pages/home/Home';
 import Team from './pages/team/Team';
 import Instructors from './pages/instructors/Instructors';
-// import WorldCases from './pages/worldCases/WorldCases';
-// import WorldDeaths from './pages/worldDeaths/WorldDeaths';
+import { Covid19 } from './pages';
+import { NewCovid19 } from "./pages";
 import { ContinentsDoughnut } from "./pages";
 import { ContinentsPolar } from "./pages";
 import { GlobalHistorical } from "./pages";
 import { GlobalVaccineHistorical } from "./pages";
-// import { BarChart } from "./pages/Barchart";
-// import { Pie } from "./pages/ozKiwiPie";
+import { APIBarChart } from "./pages";
+import { Pie } from "./pages";
 
 function App() {
     return (
@@ -29,16 +29,16 @@ function App() {
                     <Route path="/instructors" element={<Instructors />} />
 
                     {/* Pages */}
-                    {/* <Route path="worldCases" element={<WorldCases />} />
-                    <Route path="worldDeaths" element={<WorldDeaths />} /> */}
+                    <Route path="covid19" element={<Covid19 />} />
+                    <Route path="newCovid19" element={<NewCovid19 />} />
 
                     {/* Charts */}
                     <Route path="continentsDoughnut" element={<ContinentsDoughnut />} />
                     <Route path="continentsPolar" element={<ContinentsPolar />} />
                     <Route path="globalHistorical" element={<GlobalHistorical />} />
                     <Route path="globalVaccineHistorical" element={<GlobalVaccineHistorical />} />
-                    {/* <Route path="BarChart" element={<BarChart />} /> */}
-                    {/* <Route path="OzKiwiPie" element={<OzKiwiPie />} /> */}
+                    <Route path="apiBarChart" element={<APIBarChart />} />
+                    <Route path="pie" element={<Pie />} />
 
 
                 </Routes>

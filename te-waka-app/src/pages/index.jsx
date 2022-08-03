@@ -4,8 +4,8 @@ export { default as GlobalHistorical } from './globalHistorical/GlobalHistorical
 export { default as GlobalVaccineHistorical } from './globalVaccineHistorical/GlobalVaccineHistorical';
 export { default as ContinentsDoughnut } from './continentsDoughnut/ContinentsDoughnut';
 export { default as ContinentsPolar } from './continentsPolar/ContinentsPolar';
-export { default as APIBarChart } from './Barchart/APIBarChart';
-export { default as Pie } from './ozKiwiPie/Pie';
+export { default as APIBarChart } from './apiBarchart/APIBarChart';
+export { default as Pie } from './ANZPie/Pie';
 export { default as Home } from './home/Home';
 export { default as Team } from './team/Team';
 export { default as Instructors } from './instructors/Instructors';
