@@ -3,17 +3,11 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Home from './pages/home/Home';
-import Team from './pages/team/Team';
-import Instructors from './pages/instructors/Instructors';
-import { Covid19 } from './pages';
-import { NewCovid19 } from "./pages";
-import { ContinentsDoughnut } from "./pages";
-import { ContinentsPolar } from "./pages";
-import { GlobalHistorical } from "./pages";
-import { GlobalVaccineHistorical } from "./pages";
-import { APIBarChart } from "./pages";
-import { Pie } from "./pages";
+import {
+    Home, Team, Instructors, Covid19, NewCovid19, ContinentsDoughnut,
+    ContinentsPolar, GlobalHistorical, GlobalVaccineHistorical, APIBarChart, Pie
+} from './pages';
+
 
 
 function App() {
