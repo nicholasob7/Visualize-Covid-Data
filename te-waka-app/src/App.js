@@ -15,6 +15,7 @@ import { GlobalVaccineHistorical } from "./pages";
 import { APIBarChart } from "./pages";
 import { Pie } from "./pages";
 
+
 function App() {
     return (
         <div className="App">

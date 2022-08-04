@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from "../../api";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie, Chart } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend); const options = {
     responsive: true,
