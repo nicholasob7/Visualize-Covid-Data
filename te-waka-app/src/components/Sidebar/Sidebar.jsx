@@ -1,7 +1,7 @@
 // import React from "react";
 import "./sidebar.scss";
-import DashboardCustomizeTwoToneIcon from '@mui/icons-material/DashboardCustomizeTwoTone';
 
+import DashboardCustomizeTwoToneIcon from '@mui/icons-material/DashboardCustomizeTwoTone';
 import TravelExploreSharpIcon from '@mui/icons-material/TravelExploreSharp';
 import SelfImprovementSharpIcon from '@mui/icons-material/SelfImprovementSharp';
 import LandscapeTwoToneIcon from '@mui/icons-material/LandscapeTwoTone';
@@ -9,63 +9,96 @@ import GroupTwoToneIcon from '@mui/icons-material/GroupTwoTone';
 import VaccinesTwoToneIcon from '@mui/icons-material/VaccinesTwoTone';
 import NumbersTwoToneIcon from '@mui/icons-material/NumbersTwoTone';
 import PercentTwoToneIcon from '@mui/icons-material/PercentTwoTone';
-
 import GroupsTwoToneIcon from '@mui/icons-material/GroupsTwoTone';
 import CastForEducationTwoToneIcon from '@mui/icons-material/CastForEducationTwoTone';
+
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="top">
-                <DashboardCustomizeTwoToneIcon className="icon" />
-                <span className="logo">Te Waka App</span>
+                <Link to="/" >
+                    <DashboardCustomizeTwoToneIcon className="icon" />
+                </Link>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <span className="logo">Te Waka App</span>
+                </Link>
+
             </div>
             <hr />
             <div className="center">
                 <ul>
                     <p className="title">o tatau Iwi</p>
+                    <Link to="/covid19" style={{ textDecoration: "none" }}>
+                        <li>
+                            <TravelExploreSharpIcon className="icon" />
+                            <span>WorldMapCases</span>
+                        </li>
+                    </Link>
 
-                    <li>
-                        <TravelExploreSharpIcon className="icon" />
-                        <span>WorldMapCases</span>
-                    </li>
-                    <li>
-                        <SelfImprovementSharpIcon className="icon" />
-                        <span>WorldMapDeaths</span>
-                    </li>
+                    <Link to="/newCovid19" style={{ textDecoration: "none" }}>
+                        <li>
+                            <SelfImprovementSharpIcon className="icon" />
+                            <span>WorldMapDeaths</span>
+                        </li>
+                    </Link >
+
                     <p className="title">o tatau tautohetohe</p>
-                    <li>
-                        <LandscapeTwoToneIcon className="icon" />
-                        <span>ContinentsCases</span>
-                    </li>
-                    <li>
-                        <GroupTwoToneIcon className="icon" />
-                        <span>ContinentsDeaths</span>
-                    </li>
+                    <Link to="/continentsDoughnut" style={{ textDecoration: "none" }}>
+                        <li>
+                            <LandscapeTwoToneIcon className="icon" />
+                            <span>ContinentsCases</span>
+                        </li>
+                    </Link>
+
+                    <Link to="/continentsPolar" style={{ textDecoration: "none" }}>
+                        <li>
+                            <GroupTwoToneIcon className="icon" />
+                            <span>ContinentsDeaths</span>
+                        </li>
+                    </Link>
+
+
                     <p className="title">to tatau Ao</p>
-                    <li>
-                        <NumbersTwoToneIcon className="icon" />
-                        <span>WorldNumbers</span>
-                    </li>
-                    <li>
-                        <VaccinesTwoToneIcon className="icon" />
-                        <span>WorldVaccines</span>
-                    </li>
+                    <Link to="/globalHistorical" style={{ textDecoration: "none" }}>
+                        <li>
+                            <NumbersTwoToneIcon className="icon" />
+                            <span>WorldNumbers</span>
+                        </li>
+                    </Link>
+
+                    <Link to="/globalVaccineHistorical" style={{ textDecoration: "none" }}>
+                        <li>
+                            <VaccinesTwoToneIcon className="icon" />
+                            <span>WorldVaccines</span>
+                        </li>
+                    </Link>
+
                     <p className="title">Nga orau o Ahitereiria me Aotearoa o te iwi whanui</p>
-                    <li>
-                        <PercentTwoToneIcon className="icon" />
-                        <span>ANZ</span>
-                    </li>
+                    <Link to="/pie" style={{ textDecoration: "none" }}>
+                        <li>
+                            <PercentTwoToneIcon className="icon" />
+                            <span>ANZ</span>
+                        </li>
+                    </Link>
+
                     <p className="title">Kaimahi</p>
-                    <li>
-                        <GroupsTwoToneIcon className="icon" />
-                        <span>Team</span>
-                    </li>
+                    <Link to="/team" style={{ textDecoration: "none" }}>
+                        <li>
+                            <GroupsTwoToneIcon className="icon" />
+                            <span>Team</span>
+                        </li>
+                    </Link>
+
                     <p className="title">Nga Kaiako</p>
-                    <li>
-                        <CastForEducationTwoToneIcon className="icon" />
-                        <span>Instructors</span>
-                    </li>
+                    <Link to="/instructors" style={{ textDecoration: "none" }}>
+                        <li>
+                            <CastForEducationTwoToneIcon className="icon" />
+                            <span>Instructors</span>
+                        </li>
+                    </Link>
+
                 </ul>
             </div>
             <div className="bottom">
@@ -73,7 +106,7 @@ const Sidebar = () => {
                 <div className="colorOption"></div>
 
             </div>
-        </div>
+        </div >
     )
 }
 
