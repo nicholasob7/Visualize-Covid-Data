@@ -87,3 +87,4 @@
 
 * Implemented Sidebar and Navbar icons and styling.
 * Next Step linking home icons to pages.
+* Sidebar links scripted.
