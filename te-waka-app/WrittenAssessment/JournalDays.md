@@ -82,3 +82,8 @@
 
 * Successfully compiled all routes to seperate pages.
 * Next Step implement navbar and sidebar.
+
+# Week 6 Thursday 4/08/22
+
+* Implemented Sidebar and Navbar icons and styling.
+* Next Step linking home icons to pages.
