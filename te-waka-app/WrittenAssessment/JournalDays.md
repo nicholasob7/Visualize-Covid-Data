@@ -88,3 +88,8 @@
 * Implemented Sidebar and Navbar icons and styling.
 * Next Step linking home icons to pages.
 * Sidebar links scripted.
+
+# Week 6 Saturday 6/08/22
+
+* Added dark mode and ApiBarChart Display.
+* Next Step configure Home page.
