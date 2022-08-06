@@ -7,12 +7,18 @@ import {
     Home, Team, Instructors, Covid19, NewCovid19, ContinentsDoughnut,
     ContinentsPolar, GlobalHistorical, GlobalVaccineHistorical, APIBarChart, Pie
 } from './pages';
+import "./style/dark.scss"
+import { useContext } from "react";
+import DarkModeContext from "./context/darkModeContext";
+
 
 
 
 function App() {
+
+    const { darkMode } = useContext(DarkModeContext);
     return (
-        <div className="App">
+        <div className={darkMode ? "app dark" : "app"}>
             <BrowserRouter>
                 <Routes>
                     {/* Landing */}
