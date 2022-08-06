@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
-
+import "./continentsdoughnut.scss"
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -40,7 +40,9 @@ export default function ContinentsDoughnut() {
 
     return (
         <div className="App">
-            <h1>Total Deaths By Continent</h1>
+            <div classname="text-violet-500"
+            >Covid19 Deaths per Continent
+            </div>
             <Doughnut data={data}
             />
 

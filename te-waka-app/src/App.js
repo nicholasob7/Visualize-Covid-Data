@@ -19,10 +19,6 @@ function App() {
                     <Route path="/" element={(<Home />)} />
                     <Route path="/home" element={(<Home />)} />
 
-                    {/* Team */}
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/instructors" element={<Instructors />} />
-
                     {/* Pages */}
                     <Route path="/covid19" element={<Covid19 />} />
                     <Route path="/newCovid19" element={<NewCovid19 />} />
@@ -34,6 +30,10 @@ function App() {
                     <Route path="/globalVaccineHistorical" element={<GlobalVaccineHistorical />} />
                     <Route path="/apiBarChart" element={<APIBarChart />} />
                     <Route path="/pie" element={<Pie />} />
+
+                    {/* Team */}
+                    <Route path="/team" element={<Team />} />
+                    <Route path="/instructors" element={<Instructors />} />
 
 
                 </Routes>

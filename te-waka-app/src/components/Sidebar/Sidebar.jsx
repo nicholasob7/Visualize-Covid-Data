@@ -1,9 +1,9 @@
-// import React from "react";
 import "./sidebar.scss";
 
 import DashboardCustomizeTwoToneIcon from '@mui/icons-material/DashboardCustomizeTwoTone';
 import TravelExploreSharpIcon from '@mui/icons-material/TravelExploreSharp';
 import SelfImprovementSharpIcon from '@mui/icons-material/SelfImprovementSharp';
+import BarChartTwoToneIcon from '@mui/icons-material/BarChartTwoTone';
 import LandscapeTwoToneIcon from '@mui/icons-material/LandscapeTwoTone';
 import GroupTwoToneIcon from '@mui/icons-material/GroupTwoTone';
 import VaccinesTwoToneIcon from '@mui/icons-material/VaccinesTwoTone';
@@ -48,17 +48,23 @@ const Sidebar = () => {
                     <Link to="/continentsDoughnut" style={{ textDecoration: "none" }}>
                         <li>
                             <LandscapeTwoToneIcon className="icon" />
-                            <span>ContinentsCases</span>
+                            <span>ContinentsDeaths</span>
                         </li>
                     </Link>
 
                     <Link to="/continentsPolar" style={{ textDecoration: "none" }}>
                         <li>
                             <GroupTwoToneIcon className="icon" />
-                            <span>ContinentsDeaths</span>
+                            <span>ContinentCases</span>
                         </li>
                     </Link>
 
+                    <Link to="/apiBarChart" style={{ textDecoration: "none" }}>
+                        <li>
+                            <BarChartTwoToneIcon className="icon" />
+                            <span>Tests and Populations</span>
+                        </li>
+                    </Link >
 
                     <p className="title">to tatau Ao</p>
                     <Link to="/globalHistorical" style={{ textDecoration: "none" }}>
