@@ -10,7 +10,7 @@ export default function CovidMap({ countries }) {
     fillColor: "white",
     weight: 1,
     color: "#f6fbff",
-    fillOpacity: 1,   
+    fillOpacity: 1,
   };
 
 
@@ -23,19 +23,19 @@ export default function CovidMap({ countries }) {
     layer.bindPopup(`${name} ${confirmText}`);
   };
   return (
-    <MapContainer 
-      style={{ height: "50vh" }} 
-      zoom={1} 
+    <MapContainer
+      style={{ height: "50vh" }}
+      zoom={1}
       center={[20, 100]}>
       <GeoJSON
         style={mapStyle}
         data={countries}
         onEachFeature={onEachCountry}
       />
-   
-          <div className="leaflet-control leaflet-bar" id="info-pane">
-          
-          </div>
+
+      <div className="leaflet-control leaflet-bar" id="info-pane">
+
+      </div>
 
 
     </MapContainer>

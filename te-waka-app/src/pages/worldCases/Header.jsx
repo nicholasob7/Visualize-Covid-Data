@@ -9,12 +9,12 @@ const Header = () => {
         marginTop: "1rem",
         textAlign: "center",
         color: "Grey",
-        width: "60%",
+        width: "80%",
         marginLeft: "auto",
         marginRight: "auto",
       }}
     >
-      <h1>COVID 19 Global Cases Statistics</h1>
+      <h1>COVID 19 Cases by Nation</h1>
       <hr />
     </div>
   )
