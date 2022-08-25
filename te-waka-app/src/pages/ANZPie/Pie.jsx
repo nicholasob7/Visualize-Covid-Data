@@ -111,7 +111,7 @@ export default function PieChart() {
     }
 
     return (
-        <div className="App" style={{ width: '50%', height: '50%' }}>
+        <div className="App" style={{ width: '40%', height: '40%' }}>
             <h1> Australia vs NewZealand Covid19 Data</h1>
             {piediv}
 

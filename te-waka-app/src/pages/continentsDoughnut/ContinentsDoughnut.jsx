@@ -39,7 +39,7 @@ export default function ContinentsDoughnut() {
     };
 
     return (
-        <div className="App">
+        <div className="App" style={{ width: '40%', height: '40%' }}>
             <div classname="text-violet-500"
             >Covid19 Deaths per Continent
             </div>

@@ -24,9 +24,9 @@ export default function CovidMap({ countries }) {
   };
   return (
     <MapContainer
-      style={{ height: "50vh" }}
+      style={{ height: "80vh" }}
       zoom={1}
-      center={[20, 100]}>
+      center={[20, 90]}>
       <GeoJSON
         style={mapStyle}
         data={countries}

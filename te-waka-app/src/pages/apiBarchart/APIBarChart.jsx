@@ -66,7 +66,7 @@ export default function BarChart() {
     };
 
     return (
-        <div className="App">
+        <div className="App" style={{ width: '90%', height: '90%' }}>
             <h1>Covid-19 testing in continents</h1>
             <Bar data={data}
             />

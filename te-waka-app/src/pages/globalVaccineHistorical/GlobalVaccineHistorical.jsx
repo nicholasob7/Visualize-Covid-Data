@@ -159,7 +159,7 @@ export default function PlotExample() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{ width: '90%', height: '90%' }}>
       <h1>Global Vaccinations</h1>
       <Line
         options={options}

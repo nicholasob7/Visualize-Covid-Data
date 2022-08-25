@@ -39,7 +39,7 @@ export default function ContinentsPolar() {
     };
 
     return (
-        <div className App="app">
+        <div className App="app" style={{ width: '40%', height: '40%' }}>
             <h1>Total Cases By Continent</h1>
             <PolarArea data={data} />;
         </div>

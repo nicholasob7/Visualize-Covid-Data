@@ -143,7 +143,7 @@ export default function ApiLineExample() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{ width: '90%', height: '90%' }}>
       <h1>Global Logarithmic Scale</h1>
       <Line
         options={options}
